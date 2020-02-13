@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <form id="changeUrlForm">
+        <label>Enter a City
+            <input type="text" id="city" value="" />
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<script>
+    const changeUrlForm = document.querySelector('#changeUrlForm');
+
+    changeUrlForm.addEventListener('submit', function (event) {
+        // Prevent default behavior
+        event.preventDefault();
+
+        // Get the value of the input
+        const cityInput = document.querySelector('#city');
+        const city = cityInput.value;
+
+        // Build a new URL, adding the input value as a query parameter
+        const newUrl = window.location.href + 'page2?city=' + city;
+
+        // Redirect to the new URL
+        window.location.replace(newUrl);
+    })
+</script>
+
+</html>
